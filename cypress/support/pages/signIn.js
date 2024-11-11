@@ -8,12 +8,6 @@ class SignInPage {
         errorNote : () => cy.get('#username-note'),
     }
 
-    testData = {
-        validEmail1  : 'validMail@test.com',
-        borderEmail1  : 'bor@tt.co',
-        invalidEmail1  : '@test.com',
-    }
-
     openPage() {
         cy.visit(this.url);
     }

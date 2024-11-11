@@ -22,10 +22,11 @@ describe('Booking test task', () => {
     PasswordPage.enterSamePasswords(passwords.validPassword1);
     cy.contains('Create account').should('be.visible');
     PasswordPage.clickOnSubmitButton();
-    // If present automation suspects check that message else check correct registration. I know, "if"s in autotests is not good practice
-    if(cy.get('.error-block').should('be.visible')) {
-    PasswordPage.elements.errorMessage().should('be.visible');
-    PasswordPage.elements.errorMessage().should('contain.text', passwordMessages.tooManyAttemptsMessage);
+    // If present automation suspects check that message else check correct registration.
+    // I know, "if"s in autotests is not a good practice
+    if (cy.get('.error-block').should('be.visible')) {
+      PasswordPage.elements.errorMessage().should('be.visible');
+      PasswordPage.elements.errorMessage().should('contain.text', passwordMessages.tooManyAttemptsMessage);
     } else {
       HomePage.elements.welcomeModal().should('be.visible');
       HomePage.submitModalWindow();
@@ -34,8 +35,7 @@ describe('Booking test task', () => {
   }
   );
 
-  it('The user should not be able to register by entering an incorrect email. B-002', () => {
-
+  it('The user should not be able to register by entering an incorrect email.', () => {
     SignInPage.openPage();
     cy.url().should('include', 'sign-in');
     SignInPage.typeEmail(emails.invalidEmail1);
@@ -44,14 +44,14 @@ describe('Booking test task', () => {
   }
   );
 
-  it('The user should not be able to register without entering an email/entering an empty email B-003', () => {
+  it('The user should not be able to register without entering an email/entering an empty email.', () => {
     SignInPage.openPage();
     SignInPage.clickOnSubmitBtn();
     SignInPage.elements.errorNote().should('contain.text', emailMessages.emptyEmailMessage);
   }
   );
 
-  it('The user should not be able to register by entering different correct passwords. B-004', () => {
+  it('The user should not be able to register by entering different correct passwords.', () => {
     SignInPage.openPage();
     SignInPage.typeEmail(emails.validEmail);
     SignInPage.clickOnSubmitBtn();

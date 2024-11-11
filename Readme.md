@@ -3,8 +3,10 @@ Documentation present in /cypress/testCases.
 
 ## Test running istructions
 
-1. Clone this repository;
-2. Open the folder in your terminal and write the command:
+1. Clone repository; 
+`git clone -b master https://github.com/Uewek/Cypress_Drum.git`
+
+2. Open the `Cypress_Drum` folder in your terminal and write the command:
 
 `npm install`
 

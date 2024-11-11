@@ -1,4 +1,3 @@
-/// <reference types="cypress" />
 import HomePage from "../support/pages/homePage";
 import SignInPage, { assertionData } from "../../pages/signIn";
 import PasswordPage from "../../pages/passwordPage";
@@ -32,7 +31,6 @@ it('negative registration wrong email B-002', () => {
 );
 
 it('negative registration empty email B-003', () => {
-
     HomePage.openPage();
     HomePage.clickOnSignin();
     cy.url().should('include', 'sign-in');
@@ -41,8 +39,7 @@ it('negative registration empty email B-003', () => {
     SignInPage.elements.errorNote().should('contain.text', SignInPage.assertionData.emptyEmailMessage);
     }
 );
-it('negative registration different passwords B-004', () => {
-
+it('negative registration different passwords.', () => {
     SignInPage.openPage();
     SignInPage.typeEmail(SignInPage.testData.validEmail1);
     SignInPage.clickOnSubmitBtn();
