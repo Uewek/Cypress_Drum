@@ -12,13 +12,9 @@ Documentation present in /cypress/testCases.
 
 3. To run test in your terminal (headless mode):
 
-`npm run test`
+`npx cypress run`
 
 To open Cypress (UI mode):
-
-`npm run cypress`
-
-or
 
 `npx cypress open`
 
