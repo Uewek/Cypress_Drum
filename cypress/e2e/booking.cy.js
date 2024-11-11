@@ -20,6 +20,8 @@ describe('Booking test task', () => {
     //Enter email
     SignInPage.typeEmail(emails.validEmail);
     SignInPage.clickOnSubmitBtn();
+    PasswordPage.enterSamePasswords(passwords.borderPassword1);
+    PasswordPage.clickOnSubmitButton();
     // If present automation suspects check that message else check correct registration.
     // I know, "if"s in autotests is not a good practice   Let's make sure you're human
     if (cy.get('.error-block').should('be.visible')) {
